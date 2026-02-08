@@ -15,7 +15,7 @@ function App() {
   // System configuration data (simulating from database/API)
   const systemConfig = {
     appName: 'VocaLink',
-    tagline: 'Teacher & Admin Portal',
+
     description: 'Empowering educators to connect with deaf and hard of hearing students',
     version: '1.0.0',
     copyrightYear: 2026
