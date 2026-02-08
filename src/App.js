@@ -15,7 +15,7 @@ function App() {
   // System configuration data
   const systemConfig = {
     appName: 'VocaLink',
-    description: 'Empowering educators to connect with deaf and hard of hearing students',
+    description: 'Empowering people to connect with deaf and mute individuals through seamless communication.',
     version: '1.0.0',
     copyrightYear: 2026
   };
