@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  // Dynamic data using state (simulating system data)
+  // Dynamic data using state
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -12,35 +12,12 @@ function App() {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  // System configuration data (simulating from database/API)
+  // System configuration data
   const systemConfig = {
     appName: 'VocaLink',
-
     description: 'Empowering educators to connect with deaf and hard of hearing students',
     version: '1.0.0',
     copyrightYear: 2026
-  };
-
-  // Features array (dynamic data to display on login page)
-  const platformFeatures = [
-    { id: 1, icon: '📚', title: 'Content Management', description: 'Upload and organize lessons with ease' },
-    { id: 2, icon: '👥', title: 'Student Monitoring', description: 'Track student progress and records' },
-    { id: 3, icon: '💬', title: 'Message Composer', description: 'Create accessible messages for students' },
-    { id: 4, icon: '📊', title: 'Academic Dashboard', description: 'Manage activities and assignments' }
-  ];
-
-  // Demo credentials (simulating database data)
-  const demoCredentials = [
-    { id: 1, username: 'teacher@vocalink.com', password: 'teacher123', role: 'Teacher', name: 'Ms. Johnson' },
-    { id: 2, username: 'admin@vocalink.com', password: 'admin123', role: 'Administrator', name: 'Dr. Smith' }
-  ];
-
-  // Quick stats for the platform (dynamic object)
-  const platformStats = {
-    totalStudents: 245,
-    activeTeachers: 18,
-    lessonsCreated: 1432,
-    activeSessions: 12
   };
 
   // Handle input changes
@@ -62,34 +39,32 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validation
     if (!formData.username || !formData.password) {
       setErrorMessage('Please enter both username and password');
       return;
     }
 
-    // Check credentials against demo data
-    const user = demoCredentials.find(
-      cred => cred.username === formData.username && cred.password === formData.password
-    );
-
-    if (user) {
-      console.log('Login successful:', {
-        username: formData.username,
-        role: user.role,
-        name: user.name,
-        rememberMe: formData.rememberMe
-      });
-      alert(`Welcome back, ${user.name}!\nRole: ${user.role}\n\nYou would now be redirected to the ${user.role === 'Teacher' ? 'Academic Dashboard' : 'Admin Panel'}.`);
-    } else {
-      setErrorMessage('Invalid username or password');
-    }
+    console.log('Login successful:', {
+      username: formData.username,
+      rememberMe: formData.rememberMe
+    });
+    
+    alert(`Login Successful!\nWelcome, ${formData.username}.`);
   };
 
   return (
     <div className="app">
-      {/* Left Side - Branding & Features */}
+      {/* Left Side - Branding & Collage */}
       <div className="left-panel">
+        
+        {/* New Collage Background */}
+        <div className="collage-container">
+            <img src="/collage-1.jpg" alt="Classroom setting" className="collage-img img-1" />
+            <img src="/collage-2.jpg" alt="Happy students" className="collage-img img-2" />
+            <img src="/collage-3.jpg" alt="Teacher signing" className="collage-img img-3" />
+            <img src="/collage-4.jpg" alt="Student learning" className="collage-img img-4" />
+        </div>
+
         <div className="branding">
           <div className="logo">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -99,42 +74,7 @@ function App() {
             </svg>
           </div>
           <h1>{systemConfig.appName}</h1>
-          <p className="subtitle">{systemConfig.tagline}</p>
           <p className="description">{systemConfig.description}</p>
-        </div>
-
-        {/* Platform Features - Dynamic rendering from array */}
-        <div className="features">
-          <h3>Platform Features</h3>
-          <div className="features-grid">
-            {platformFeatures.map(feature => (
-              <div key={feature.id} className="feature-card">
-                <span className="feature-icon">{feature.icon}</span>
-                <h4>{feature.title}</h4>
-                <p>{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Platform Stats - Dynamic rendering from object */}
-        <div className="stats">
-          <div className="stat-item">
-            <span className="stat-number">{platformStats.totalStudents}</span>
-            <span className="stat-label">Students</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">{platformStats.activeTeachers}</span>
-            <span className="stat-label">Teachers</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">{platformStats.lessonsCreated}</span>
-            <span className="stat-label">Lessons</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">{platformStats.activeSessions}</span>
-            <span className="stat-label">Active Now</span>
-          </div>
         </div>
       </div>
 
@@ -146,28 +86,13 @@ function App() {
             <p>Sign in to access your dashboard</p>
           </div>
 
-          {/* Demo Credentials Info */}
-          <div className="demo-info">
-            <strong>Demo Credentials:</strong>
-            <ul>
-              {demoCredentials.map(cred => (
-                <li key={cred.id}>
-                  <strong>{cred.role}:</strong> {cred.username} / {cred.password}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Login Form */}
           <form onSubmit={handleSubmit} className="login-form">
-            {/* Error Message */}
             {errorMessage && (
               <div className="error-message">
                 {errorMessage}
               </div>
             )}
 
-            {/* Username/Email Field */}
             <div className="form-group">
               <label htmlFor="username">Username or Email</label>
               <input
@@ -181,7 +106,6 @@ function App() {
               />
             </div>
 
-            {/* Password Field */}
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <div className="password-input-wrapper">
@@ -205,7 +129,6 @@ function App() {
               </div>
             </div>
 
-            {/* Remember Me & Forgot Password */}
             <div className="form-options">
               <label className="checkbox-label">
                 <input
@@ -219,21 +142,18 @@ function App() {
               <a href="#forgot" className="forgot-password">Forgot Password?</a>
             </div>
 
-            {/* Submit Button */}
             <button type="submit" className="login-button">
               Sign In
             </button>
 
-            {/* Register Link */}
             <p className="register-link">
               Don't have an account? <a href="#register">Contact Administrator</a>
             </p>
           </form>
 
-          {/* Footer */}
           <div className="login-footer">
             <p>&copy; {systemConfig.copyrightYear} {systemConfig.appName} v{systemConfig.version}</p>
-            <p>Designed for SNED Teachers & Administrators</p>
+            <p>Designed for SNED Teachers &amp; Administrators</p>
           </div>
         </div>
       </div>
