@@ -147,13 +147,13 @@ function App() {
             </button>
 
             <p className="register-link">
-              Don't have an account? <a href="#register">Contact Administrator</a>
+              Don't have an account? <a href="#register">Sign Up</a>
             </p>
           </form>
 
           <div className="login-footer">
             <p>&copy; {systemConfig.copyrightYear} {systemConfig.appName} v{systemConfig.version}</p>
-            <p>Designed for SNED Teachers &amp; Administrators</p>
+            <p>Designed for Deaf &amp; Mute Individuals</p>
           </div>
         </div>
       </div>
