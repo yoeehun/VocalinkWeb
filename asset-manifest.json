@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/VocalinkWeb/static/css/main.24a28c5c.css",
-    "main.js": "/VocalinkWeb/static/js/main.e7451825.js",
+    "main.js": "/VocalinkWeb/static/js/main.a3d22f26.js",
     "index.html": "/VocalinkWeb/index.html",
     "main.24a28c5c.css.map": "/VocalinkWeb/static/css/main.24a28c5c.css.map",
-    "main.e7451825.js.map": "/VocalinkWeb/static/js/main.e7451825.js.map"
+    "main.a3d22f26.js.map": "/VocalinkWeb/static/js/main.a3d22f26.js.map"
   },
   "entrypoints": [
     "static/css/main.24a28c5c.css",
-    "static/js/main.e7451825.js"
+    "static/js/main.a3d22f26.js"
   ]
 }
