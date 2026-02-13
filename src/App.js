@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  // Dynamic data using state
+
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -12,7 +12,7 @@ function App() {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  // System configuration data
+
   const systemConfig = {
     appName: 'VocaLink',
     description: 'Empowering people to connect with deaf and mute individuals through seamless communication.',
@@ -20,7 +20,7 @@ function App() {
     copyrightYear: 2026
   };
 
-  // Handle input changes
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prevState => ({
@@ -30,12 +30,12 @@ function App() {
     setErrorMessage('');
   };
 
-  // Toggle password visibility
+
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
 
-  // Handle form submission
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -54,15 +54,29 @@ function App() {
 
   return (
     <div className="app">
-      {/* Left Side - Branding & Collage */}
       <div className="left-panel">
         
-        {/* New Collage Background */}
         <div className="collage-container">
-            <img src="/collage-1.jpg" alt="Classroom setting" className="collage-img img-1" />
-            <img src="/collage-2.jpg" alt="Happy students" className="collage-img img-2" />
-            <img src="/collage-3.jpg" alt="Teacher signing" className="collage-img img-3" />
-            <img src="/collage-4.jpg" alt="Student learning" className="collage-img img-4" />
+            <img 
+              src={process.env.PUBLIC_URL + '/collage-1.jpg'} 
+              alt="Classroom setting" 
+              className="collage-img img-1" 
+            />
+            <img 
+              src={process.env.PUBLIC_URL + '/collage-2.jpg'} 
+              alt="Happy students" 
+              className="collage-img img-2" 
+            />
+            <img 
+              src={process.env.PUBLIC_URL + '/collage-3.jpg'} 
+              alt="Teacher signing" 
+              className="collage-img img-3" 
+            />
+            <img 
+              src={process.env.PUBLIC_URL + '/collage-4.jpg'} 
+              alt="Student learning" 
+              className="collage-img img-4" 
+            />
         </div>
 
         <div className="branding">
@@ -78,7 +92,6 @@ function App() {
         </div>
       </div>
 
-      {/* Right Side - Login Form */}
       <div className="right-panel">
         <div className="login-container">
           <div className="login-header">
